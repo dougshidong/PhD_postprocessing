@@ -1,0 +1,25 @@
+Starting optimization with 20...
+
+Newton-Krylov using GMRES with Limited-Memory BFGS preconditioning
+Line Search: Backtracking satisfying Null Curvature Condition
+-------------------------------------------------------------------------------------------------------------
+Newton-Krylov status output definitions
+
+  iter     - Number of iterates (steps taken) 
+  value    - Objective function value 
+  gnorm    - Norm of the gradient
+  snorm    - Norm of the step (update to optimization vector)
+  #fval    - Cumulative number of times the objective function was evaluated
+  #grad    - Number of times the gradient was computed
+  iterCG   - Number of Krylov iterations used to compute search direction
+  flagCG   - Krylov solver flag
+-------------------------------------------------------------------------------------------------------------
+  iter  value          gnorm          snorm          #fval     #grad     iterCG    flagCG    ls_#fval  ls_#grad  n_vmult           dRdW_form         dRdW_mult         dRdX_mult         d2R_mult          
+  0     7.048958e-03   2.416031e-01   
+  1     9.397947e-05   3.376532e-02   1.754404e-01   2         2         18        0         1         0         49951             11                47159             40                76                
+  2     2.559432e-07   4.432904e-04   1.121145e-01   3         3         17        0         1         0         96223             17                91588             77                148               
+  3     1.851896e-09   7.598677e-07   4.977579e-02   4         4         18        0         1         0         143561            22                137221            116               224               
+  4     2.365889e-17   3.026227e-09   6.643270e-03   5         5         19        0         1         0         187177            26                179270            157               304               
+Optimization Terminated with Status: Converged
+The process took 5205.91 seconds to run.
+Total n_vmult for algorithm 187177

@@ -10,7 +10,15 @@ import pandas as pd
 import count_flops
 
 matplotlib.use('Agg')
+#matplotlib.rc('text', usetex=True)
+#matplotlib.rc('text.latex', preamble=r'\usepackage{xcolor}')
+#matplotlib.use('ps')
 
+
+plt.rc('font', size=18) 
+legend_fontsize = 20
+label_fontsize = 20
+tick_label_fontsize = 20
 
 def input_file_name_builder(optimization_type, polynomial_degree, n_design, path="./"):
     return (path + optimization_type
@@ -47,7 +55,9 @@ newton_linestyle = 1
 square_figure_size = (8, 6)
 wide_figure_size = (14, 6)
 big_figure_size = (14, 12)
-figure_size = wide_figure_size
+bigger_figsize=(18,12)
+wider_figsize=(18,6)
+figure_size = wider_figsize
 
 table_print = ''
 
@@ -98,8 +108,8 @@ pdas_delimiter_fs = (6,) \
       + (11,) \
       + (18,) * 5
 
-fig_FS_cycles, axs_FS_cycles = plt.subplots(len(n_dofs_list), figsize=big_figure_size, sharex=True)
-fig_RS_cycles, axs_RS_cycles = plt.subplots(len(n_dofs_list), figsize=big_figure_size, sharex=True)
+fig_FS_cycles, axs_FS_cycles = plt.subplots(len(n_dofs_list), figsize=bigger_figsize, sharex=True)
+fig_RS_cycles, axs_RS_cycles = plt.subplots(len(n_dofs_list), figsize=bigger_figsize, sharex=True)
 
 fig_all_cycles, axs_all_cycles = plt.subplots(len(n_dofs_list), figsize=big_figure_size, sharex=True)
 
@@ -233,7 +243,7 @@ for polyindex, poly in enumerate(poly_list):
                    color=color_str[ms_index],
                    marker=marker_str[ms_index],
                    ms=marker_size,
-                   label=r'BFGS, $n$ = ' + str(n_design))
+                   label=r'RS-B, $n$ = ' + str(n_design))
 
         ax = axs_all_cycles[polyindex]
         ms_index = ReducedGradientvsSubiterations_design_list.index(n_design)
@@ -242,7 +252,7 @@ for polyindex, poly in enumerate(poly_list):
                color=color_str[ms_index],
                marker=marker_str[ms_index],
                ms=marker_size,
-               label=r'BFGS, $n$ = ' + str(n_design))
+               label=r'RS-B, $n$ = ' + str(n_design))
 
         if poly - 1 == 1 and n_design in ReducedGradientvsSubiterations_design_list:
         #if n_design in ReducedGradientvsSubiterations_design_list:
@@ -254,7 +264,7 @@ for polyindex, poly in enumerate(poly_list):
                         marker=marker_str[ms_index],
                         #ms=marker_size,
                         ms=2,
-                        label=r'RS BFGS, $n$ = ' + str(n_design))
+                        label=r'RS-B, $n$ = ' + str(n_design))
 
 
         n_iterations_list.append(cycles);
@@ -282,7 +292,7 @@ for polyindex, poly in enumerate(poly_list):
 
     plt.figure("Iterations_vs_nctl_ReducedSpace", figsize=figure_size)
     plt.plot(n_design_list, n_iterations_list, '-o', ms=marker_size,
-             label=r'RS BFGS, $m$ = ' + str(n_dofs_list[polyindex]))
+             label=r'RS-B, $m$ = ' + str(n_dofs_list[polyindex]))
 
     plt.figure("Iterations_vs_nctl_ReducedandFullSpace", figsize=figure_size)
     plt.plot(n_design_list_more, n_iterations_list,
@@ -299,8 +309,8 @@ for polyindex, poly in enumerate(poly_list):
              color=color_str[4],
              marker=marker_str[polyindex],
              ms=marker_size,
-             label=r'RS BFGS, $m$ = ' + str(n_dofs_list[polyindex]))
-    # label=r'RS BFGS, $p$ = '+str(poly))
+             label=r'RS-B, $m$ = ' + str(n_dofs_list[polyindex]))
+    # label=r'RS-B, $p$ = '+str(poly))
 
 for i, n_design in enumerate(WorkvsNDOFS_design_list):
     j = n_design_list_more.index(n_design)
@@ -316,7 +326,14 @@ for i, n_design in enumerate(WorkvsNDOFS_design_list):
              color=color_str[bfgs_color],
              marker=marker_str[i],
              ms=marker_size,
-             label=r'RS BFGS, $n$ = ' + str(n_design))
+             label=r'RS-B, $n$ = ' + str(n_design))
+    plt.figure("work_vs_nstate9", figsize=figure_size)
+    plt.plot(x, y,
+             linestyle=line_style_str[i],
+             color=color_str[bfgs_color],
+             marker=marker_str[i],
+             ms=marker_size,
+             label=r'RS-B, $n$ = ' + str(n_design))
 
 opttype = 'optimization_full_space_p4a'
 # plt.figure(figsize=figure_size)
@@ -419,7 +436,7 @@ for polyindex, poly in enumerate(poly_list):
                         color=color_str[ms_index],
                         marker=marker_str[ms_index],
                         ms=marker_size,
-                        label=r'Full-space $\tilde{\mathbf{P}}_2$, $n$ = ' + str(n_design))
+                        label=r'FS $\tilde{\mathbf{P}}_2$, $n$ = ' + str(n_design))
 
             plt.figure("FullspaceGradientvsSubiterations" + str(poly), figsize=figure_size)
             ms_index = GradientvsSubiterations_design_list.index(n_design)
@@ -428,7 +445,7 @@ for polyindex, poly in enumerate(poly_list):
                          color=color_str[ms_index],
                          marker=marker_str[ms_index],
                          ms=marker_size,
-                         label=r'Full-space $\tilde{\mathbf{P}}_2$, $n$ = ' + str(n_design))
+                         label=r'FS $\tilde{\mathbf{P}}_2$, $n$ = ' + str(n_design))
 
         ax = axs_all_cycles[polyindex]
         ms_index = ReducedGradientvsSubiterations_design_list.index(n_design)
@@ -437,7 +454,7 @@ for polyindex, poly in enumerate(poly_list):
                     color=color_str[ms_index],
                     marker=marker_str[ms_index],
                     ms=marker_size,
-                    label=r'Full-space $\tilde{\mathbf{P}}_2$, $n$ = ' + str(n_design))
+                    label=r'FS $\tilde{\mathbf{P}}_2$, $n$ = ' + str(n_design))
 
         if poly - 1 == 1 and n_design in ReducedGradientvsSubiterations_design_list:
         #if n_design in ReducedGradientvsSubiterations_design_list:
@@ -449,7 +466,7 @@ for polyindex, poly in enumerate(poly_list):
                         marker=marker_str[ms_index],
                         #ms=marker_size,
                         ms=2,
-                        label=r'Full-space $\tilde{\mathbf{P}}_2$, $n$ = ' + str(n_design))
+                        label=r'FS $\tilde{\mathbf{P}}_2$, $n$ = ' + str(n_design))
 
     plt.figure(grad_vs_cycles_figure_name, figsize=figure_size)
     plt.title(r'Full-space with $\tilde{\mathbf{P}}_2$ Gradient vs Design Cycles, $m$ = ' + str(n_dofs_list[polyindex]))
@@ -477,7 +494,7 @@ for polyindex, poly in enumerate(poly_list):
              color=color_str[full_space_color],
              marker=marker_str[3],
              ms=marker_size - 1,
-             label=r'Full-space $\tilde{\mathbf{P}}_2$, $m$ = ' + str(n_dofs_list[polyindex]))
+             label=r'FS $\tilde{\mathbf{P}}_2$, $m$ = ' + str(n_dofs_list[polyindex]))
 
     plt.figure("Iterations_vs_nctl_ReducedandFullSpace", figsize=figure_size)
     plt.plot(n_design_list_more, n_iterations_list,
@@ -485,7 +502,7 @@ for polyindex, poly in enumerate(poly_list):
              color=color_str[polyindex],
              marker=marker_str[full_space_marker],
              ms=marker_size - 1,
-             label=r'Full-space $\tilde{\mathbf{P}}_2$, $m$ = ' + str(n_dofs_list[polyindex]))
+             label=r'FS $\tilde{\mathbf{P}}_2$, $m$ = ' + str(n_dofs_list[polyindex]))
 
     plt.figure("nkkt_vs_nctl", figsize=figure_size)
     plt.plot(n_design_list_more,
@@ -494,7 +511,7 @@ for polyindex, poly in enumerate(poly_list):
              color=color_str[full_space_color],
              marker=marker_str[3],
              ms=marker_size,
-             label=r'Full-space $\tilde{\mathbf{P}}_2$, $m$ = ' + str(n_dofs_list[polyindex]))
+             label=r'FS $\tilde{\mathbf{P}}_2$, $m$ = ' + str(n_dofs_list[polyindex]))
 
     plt.figure("work_vs_nctl", figsize=figure_size)
     plt.plot(n_design_list_more,
@@ -503,7 +520,7 @@ for polyindex, poly in enumerate(poly_list):
              color=color_str[full_space_color],
              marker=marker_str[3],
              ms=marker_size,
-             label=r'Full-space $\tilde{\mathbf{P}}_2$, $m$ = ' + str(n_dofs_list[polyindex]))
+             label=r'FS $\tilde{\mathbf{P}}_2$, $m$ = ' + str(n_dofs_list[polyindex]))
 
     plt.figure("work_vs_nctl_2", figsize=figure_size)
     plt.plot(n_design_list_more,
@@ -512,7 +529,7 @@ for polyindex, poly in enumerate(poly_list):
              color=color_str[full_space_color],
              marker=marker_str[polyindex],
              ms=marker_size,
-             label=r'Full-space $\tilde{\mathbf{P}}_2$, $m$ = ' + str(n_dofs_list[polyindex]))
+             label=r'FS $\tilde{\mathbf{P}}_2$, $m$ = ' + str(n_dofs_list[polyindex]))
     # label=r'FS $\tilde{\mathbf{P}}_2$, $p$ = '+str(poly))
 
     plt.figure("work_vs_nctl_3", figsize=figure_size)
@@ -522,7 +539,7 @@ for polyindex, poly in enumerate(poly_list):
              color=color_str[full_space_color],
              marker=marker_str[3],
              ms=marker_size,
-             label=r'Full-space $\tilde{\mathbf{P}}_2$, $m$ = ' + str(n_dofs_list[polyindex]))
+             label=r'FS $\tilde{\mathbf{P}}_2$, $m$ = ' + str(n_dofs_list[polyindex]))
 
 for i, n_design in enumerate(WorkvsNDOFS_design_list):
     j = n_design_list_more.index(n_design)
@@ -538,7 +555,14 @@ for i, n_design in enumerate(WorkvsNDOFS_design_list):
              color=color_str[full_space_color],
              marker=marker_str[i],
              ms=marker_size,
-             label=r'Full-space $\tilde{\mathbf{P}}_2$, $n$ = ' + str(n_design))
+             label=r'FS $\tilde{\mathbf{P}}_2$, $n$ = ' + str(n_design))
+    plt.figure("work_vs_nstate9", figsize=figure_size)
+    plt.plot(x, y,
+             linestyle=line_style_str[i],
+             color=color_str[full_space_color],
+             marker=marker_str[i],
+             ms=marker_size,
+             label=r'FS $\tilde{\mathbf{P}}_2$, $n$ = ' + str(n_design))
 
 for polyindex, poly in enumerate(poly_list):
     plt.figure('FullspaceGradientvsSubiterations' + str(poly), figsize=figure_size)
@@ -552,20 +576,37 @@ for polyindex, poly in enumerate(poly_list):
     plt.close()
 
 # plt.figure('FullspaceGradientvsSubiterations',figsize=figure_size)
-axs_FS_cycles[0].legend()
+# *********************
+# FIGURE 16
+#axs_FS_cycles[-1].legend(labelspacing=0.2, fontsize=legend_fontsize)
+
+handles, labels = axs_FS_cycles[0].get_legend_handles_labels()
+handles = [matplotlib.lines.Line2D([0], [0], color='w', marker='o', markersize=0)] + handles
+labels = ['$n$ = # control'] + labels
+#fig_FS_cycles.gca().legend(handles, labels, loc='lower right', fontsize=legend_fontsize, bbox_to_anchor=(1, 0.5))
+# Plot legend outside of the box
+fig_FS_cycles.legend(handles, labels, loc='center left', bbox_to_anchor=(1, 0.5), fontsize=legend_fontsize)
+
+
 for i, ax in enumerate(axs_FS_cycles):
-    ax.set_title(r'$m$ = ' + str(n_dofs_list[i]))
+    ax.set_title(r'State Variables $m$ = ' + str(n_dofs_list[i]))
     # ax.set(xlabel='Number of cycles', ylabel='Gradient Norm')
     ax.set(ylabel='Gradient Norm')
     ax.grid(visible=True, which='major', color='black', linestyle='-', alpha=0.2)
     # ax.legend()
     # ax.tight_layout()
 axs_FS_cycles[-1].set(xlabel='Number of cycles')
+
+for ax in axs_FS_cycles:
+    ax.xaxis.label.set_fontsize(label_fontsize)
+    ax.yaxis.label.set_fontsize(label_fontsize)
+    ax.tick_params(axis='both', which='major', labelsize=tick_label_fontsize)
+
 # plt.xlabel(r'Number of Subiterations')
 # plt.ylabel(r'Gradient Norm')
 # plt.grid(visible=True, which='major', color='black', linestyle='-',alpha=0.2)
 # plt.legend()
-fig_FS_cycles.suptitle(r'Full-space Gradient vs Design Cycles')
+#fig_FS_cycles.suptitle(r'Full-space Gradient vs Design Cycles')
 fig_FS_cycles.tight_layout()
 fig_FS_cycles.subplots_adjust(top=0.92)
 pp.savefig(fig_FS_cycles, bbox_inches='tight')
@@ -594,11 +635,17 @@ pp.savefig(bbox_inches='tight')
 plt.close()
 
 plt.figure("work_vs_nctl", figsize=figure_size)
-plt.title(r'Work Units vs Control Variables')
-plt.xlabel(r'Number of Control Variables $n$')
-plt.ylabel(r'Work Units to Convergence')
+#plt.title(r'Work Units vs Control Variables')
+plt.xlabel(r'Number of Control Variables $n$', fontsize=label_fontsize)
+plt.ylabel(r'Work Units to Convergence', fontsize=label_fontsize)
 plt.grid(visible=True, which='major', color='black', linestyle='-', alpha=0.2)
-plt.legend()
+#plt.legend()
+plt.tick_params(axis='both', which='major', labelsize=tick_label_fontsize)
+handles, labels = plt.gca().get_legend_handles_labels()
+handles = [matplotlib.lines.Line2D([0], [0], color='w', marker='o', markersize=0)] + handles
+labels = ['$m$ = # state'] + labels
+plt.legend(handles, labels, loc='center left', bbox_to_anchor=(1, 0.5), fontsize=legend_fontsize)
+
 plt.tight_layout()
 pp.savefig(bbox_inches='tight')
 plt.close()
@@ -613,12 +660,19 @@ plt.tight_layout()
 pp.savefig(bbox_inches='tight')
 plt.close()
 
+# ***********************
+# FIGURE 21
 plt.figure("work_vs_nctl_2", figsize=figure_size)
-plt.title(r'Work Units vs Control Variables')
-plt.xlabel(r'Number of Control Variables $n$')
-plt.ylabel(r'Work units to Convergence')
+#plt.title(r'Work Units vs Control Variables')
+plt.xlabel(r'Number of Control Variables $n$', fontsize = label_fontsize)
+plt.ylabel(r'Work units to Convergence', fontsize=label_fontsize)
 plt.grid(visible=True, which='major', color='black', linestyle='-', alpha=0.2)
-plt.legend(loc=2)
+#plt.legend(loc=2)
+plt.tick_params(axis='both', which='major', labelsize=tick_label_fontsize)
+handles, labels = plt.gca().get_legend_handles_labels()
+handles = [matplotlib.lines.Line2D([0], [0], color='w', marker='o', markersize=0)] + handles
+labels = ['$m$ = # state'] + labels
+plt.legend(handles, labels, loc='center left', bbox_to_anchor=(1, 0.5), fontsize=legend_fontsize)
 plt.tight_layout()
 pp.savefig(bbox_inches='tight')
 plt.close()
@@ -634,15 +688,25 @@ plt.tight_layout()
 pp.savefig(bbox_inches='tight')
 plt.close()
 
-axs_RS_cycles[0].legend()
+# ***********************
+# FIGURE 23
+#axs_RS_cycles[-1].legend()
+handles, labels = axs_RS_cycles[0].get_legend_handles_labels()
+handles = [matplotlib.lines.Line2D([0], [0], color='w', marker='o', markersize=0)] + handles
+labels = ['$n$ = # control'] + labels
+fig_RS_cycles.legend(handles, labels, loc='center left', bbox_to_anchor=(1, 0.5), fontsize=legend_fontsize)
 for i, ax in enumerate(axs_RS_cycles):
-    ax.set_title(r'$m$ = ' + str(n_dofs_list[i]))
+    ax.set_title(r'State Variables, $m$ = ' + str(n_dofs_list[i]))
     # ax.set(xlabel='Number of design cycles', ylabel='Gradient Norm')
     ax.set(ylabel='Gradient Norm')
     ax.grid(visible=True, which='major', color='black', linestyle='-', alpha=0.2)
 # axs_RS_cycles[-1].set(xlabel='Number of design cycles or Newton cycles')
 axs_RS_cycles[-1].set(xlabel='Design Cycles')
-fig_RS_cycles.suptitle(r'Reduced-space Gradient vs Design Cycles')
+for ax in axs_RS_cycles:
+    ax.xaxis.label.set_fontsize(label_fontsize)
+    ax.yaxis.label.set_fontsize(label_fontsize)
+    ax.tick_params(axis='both', which='major', labelsize=tick_label_fontsize)
+#fig_RS_cycles.suptitle(r'Reduced-space Gradient vs Design Cycles')
 fig_RS_cycles.tight_layout()
 fig_RS_cycles.subplots_adjust(top=0.92)
 pp.savefig(fig_RS_cycles, bbox_inches='tight')
@@ -650,32 +714,47 @@ pp.savefig(fig_RS_cycles, bbox_inches='tight')
 
 axs_all_cycles[0].legend()
 for i, ax in enumerate(axs_all_cycles):
-    ax.set_title(r'$m$ = ' + str(n_dofs_list[i]))
+    ax.set_title(r'State Variables, $m$ = ' + str(n_dofs_list[i]))
     # ax.set(xlabel='Number of design cycles', ylabel='Gradient Norm')
     ax.set(ylabel='Gradient Norm')
     ax.grid(visible=True, which='major', color='black', linestyle='-', alpha=0.2)
 axs_all_cycles[-1].set(xlabel='Design Cycles')
-fig_all_cycles.suptitle(r'Full-space Gradient vs Design Cycles')
+for ax in axs_all_cycles:
+    ax.xaxis.label.set_fontsize(label_fontsize)
+    ax.yaxis.label.set_fontsize(label_fontsize)
+    ax.tick_params(axis='both', which='major', labelsize=tick_label_fontsize)
+#fig_all_cycles.suptitle(r'Full-space Gradient vs Design Cycles')
+handles, labels = ax.get_legend_handles_labels()
+#print(handles, labels)
+lgd = fig_all_cycles.legend(handles, labels, loc='center right',fontsize=legend_fontsize)#, bbox_to_anchor=(1,0.5), fontsize=20)
 fig_all_cycles.tight_layout()
 fig_all_cycles.subplots_adjust(top=0.92)
 pp.savefig(fig_all_cycles, bbox_inches='tight')
 
 plt.figure("work_vs_nctl_3", figsize=figure_size)
-plt.title(r'Work Units vs Control Variables')
+#plt.title(r'Work Units vs Control Variables')
 plt.xlabel(r'Number of Control Variables $n$')
 plt.ylabel(r'Work Units to Convergence')
 plt.grid(visible=True, which='major', color='black', linestyle='-', alpha=0.2)
-plt.legend()
+#plt.legend()
+plt.legend(loc='center left', bbox_to_anchor=(1, 0.5), fontsize=legend_fontsize)
 plt.tight_layout()
 pp.savefig(bbox_inches='tight')
 plt.close()
 
 plt.figure("work_vs_nstate", figsize=figure_size)
-plt.title(r'Work Units vs State Variables')
+ax = plt.gca()
+#plt.title(r'Work Units vs State Variables')
 plt.xlabel(r'Number of State Variables $m$')
 plt.ylabel(r'Work Units to Convergence')
 plt.grid(visible=True, which='major', color='black', linestyle='-', alpha=0.2)
-plt.legend()
+#plt.legend()
+#leg = plt.legend(loc='center left', bbox_to_anchor=(1, 0.5), fontsize=legend_fontsize, ncol=2)
+lines = ax.get_lines()
+legend1 = plt.legend([lines[i] for i in range(0,8)], [lines[i].get_label() for i in range(0,8)], loc='center left', bbox_to_anchor=(1, 0.5), fontsize=legend_fontsize)
+legend2 = plt.legend([lines[i] for i in range(8,16)], [lines[i].get_label() for i in range(8,16)], loc='center left', bbox_to_anchor=(1.18, 0.5), fontsize=legend_fontsize, labelspacing=0.21)
+ax.add_artist(legend1)
+ax.add_artist(legend2)
 plt.tight_layout()
 pp.savefig(bbox_inches='tight')
 plt.close()
@@ -689,6 +768,30 @@ ax.grid(visible=True, which='major', color='black', linestyle='-', alpha=0.2)
 ax.legend(loc=1)
 plt.tight_layout()
 pp.savefig(bbox_inches='tight')
+
+plt.figure("work_vs_nstate9", figsize=figure_size)
+ax = plt.gca()
+#plt.title(r'Work Units vs State Variables')
+plt.xlabel(r'Number of State Variables $m$')
+plt.ylabel(r'Work Units to Convergence')
+plt.grid(visible=True, which='major', color='black', linestyle='-', alpha=0.2)
+legend_elements = [matplotlib.lines.Line2D([0], [0], color='white', label='n = # control', linewidth=0),
+                   matplotlib.lines.Line2D([0], [0], color=color_str[bfgs_color], label='RS-B', linewidth=5),
+                   matplotlib.lines.Line2D([0], [0], color=color_str[full_space_color], label=r'FS $\tilde{\mathbf{P}}_2$', linewidth=5),
+                   matplotlib.lines.Line2D([0], [0], color='black', marker=marker_str[0], label='$n$ = 10', linestyle='None'),
+                   matplotlib.lines.Line2D([0], [0], color='black', marker=marker_str[1], label='$n$ = 20', linestyle='None'),
+                   matplotlib.lines.Line2D([0], [0], color='black', marker=marker_str[2], label='$n$ = 30', linestyle='None'),
+                   matplotlib.lines.Line2D([0], [0], color='black', marker=marker_str[4], label='$n$ = 40', linestyle='None'),
+                   matplotlib.lines.Line2D([0], [0], color='black', marker=marker_str[4], label='$n$ = 50', linestyle='None'),
+                   matplotlib.lines.Line2D([0], [0], color='black', marker=marker_str[5], label='$n$ = 60', linestyle='None'),
+                   matplotlib.lines.Line2D([0], [0], color='black', marker=marker_str[6], label='$n$ = 70', linestyle='None'),
+                   matplotlib.lines.Line2D([0], [0], color='black', marker=marker_str[7], label='$n$ = 80', linestyle='None'),
+                   ]
+ax.legend(handles=legend_elements, loc='center left', bbox_to_anchor=(1, 0.5), fontsize=legend_fontsize)
+plt.tight_layout()
+pp.savefig(bbox_inches='tight')
+plt.savefig('work_vs_nstate_ps.ps', bbox_inches='tight')
+plt.close()
 
 pp.close()
 

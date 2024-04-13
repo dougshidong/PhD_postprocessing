@@ -1,0 +1,24 @@
+Starting optimization with 84 control variables...
+
+Primal Dual Active Set Method
+
+ Full-Space Newton Method
+  iter  value          gnorm          cnorm          ecnorm         flowcnorm      flow_cfl       identity       icnorm         snorm          #fval      #grad      #linesear  iterPDAS   flagPDAS   iterGMRES  flagGMRES  feasible   
+  0     1.392543e-02   3.648399e-02   
+  iter  value          gnorm          cnorm          ecnorm         flowcnorm      flow_cfl       identity       icnorm         snorm          #fval      #grad      #linesear  iterPDAS   flagPDAS   iterGMRES  flagGMRES  feasible   
+  1     8.115958e-05   3.603569e-01   1.508244e-04   1.508244e-04   1.483887e-08   1.870106e+09   3.648399e-01   0.000000e+00   1.258611e+01   2          2          1          1          1          143        0          YES       
+  iter  value          gnorm          cnorm          ecnorm         flowcnorm      flow_cfl       identity       icnorm         snorm          #fval      #grad      #linesear  iterPDAS   flagPDAS   iterGMRES  flagGMRES  feasible   
+  2     7.185399e-05   1.472402e-01   1.115793e-08   1.115793e-08   1.115793e-08   6.086817e+09   2.500000e+00   0.000000e+00   1.011267e+01   3          3          3          1          1          162        0          YES       
+  iter  value          gnorm          cnorm          ecnorm         flowcnorm      flow_cfl       identity       icnorm         snorm          #fval      #grad      #linesear  iterPDAS   flagPDAS   iterGMRES  flagGMRES  feasible   
+  3     5.221980e-05   3.355586e-02   1.631736e-03   1.631736e-03   2.509328e-09   1.187611e+11   1.472402e+00   0.000000e+00   4.413044e+00   4          4          1          1          1          127        0          YES       
+  iter  value          gnorm          cnorm          ecnorm         flowcnorm      flow_cfl       identity       icnorm         snorm          #fval      #grad      #linesear  iterPDAS   flagPDAS   iterGMRES  flagGMRES  feasible   
+  4     3.213544e-06   1.154291e-02   1.288897e-10   1.288897e-10   1.288897e-10   6.721503e+12   3.355586e-01   0.000000e+00   3.374153e+00   5          5          1          1          1          143        0          YES       
+  iter  value          gnorm          cnorm          ecnorm         flowcnorm      flow_cfl       identity       icnorm         snorm          #fval      #grad      #linesear  iterPDAS   flagPDAS   iterGMRES  flagGMRES  feasible   
+  5     4.399293e-09   1.342507e-03   2.423663e-10   2.423663e-10   2.423663e-10   3.073344e+13   1.154291e-01   0.000000e+00   5.935678e-01   6          6          1          1          1          130        0          YES       
+  iter  value          gnorm          cnorm          ecnorm         flowcnorm      flow_cfl       identity       icnorm         snorm          #fval      #grad      #linesear  iterPDAS   flagPDAS   iterGMRES  flagGMRES  feasible   
+  6     8.345989e-13   3.409545e-06   2.327664e-08   2.327664e-08   8.183065e-14   3.584161e+19   1.342507e-02   0.000000e+00   3.802675e-02   7          7          1          1          1          152        0          YES       
+  iter  value          gnorm          cnorm          ecnorm         flowcnorm      flow_cfl       identity       icnorm         snorm          #fval      #grad      #linesear  iterPDAS   flagPDAS   iterGMRES  flagGMRES  feasible   
+  7     5.035012e-21   2.734095e-10   2.772249e-11   2.772249e-11   1.313620e-15   2.784304e+25   3.409545e-05   0.000000e+00   5.156231e-04   8          8          1          1          1          173        0          YES       
+Optimization Terminated with Status: Converged
+The process took 404.242 seconds to run.
+Total n_vmult for algorithm 84055

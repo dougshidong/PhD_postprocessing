@@ -1,0 +1,36 @@
+Starting optimization with 24 control variables...
+
+Primal Dual Active Set Method
+
+ Full-Space Newton Method
+  iter  value          gnorm          cnorm          ecnorm         flowcnorm      flow_cfl       identity       icnorm         snorm          #fval      #grad      #linesear  iterPDAS   flagPDAS   iterGMRES  flagGMRES  feasible   
+  0     1.392543e-02   3.649782e-02   
+  iter  value          gnorm          cnorm          ecnorm         flowcnorm      flow_cfl       identity       icnorm         snorm          #fval      #grad      #linesear  iterPDAS   flagPDAS   iterGMRES  flagGMRES  feasible   
+  1     5.523673e-06   3.570280e-01   4.943575e-03   4.943575e-03   2.681947e-08   1.044353e+09   3.649782e-01   0.000000e+00   1.345159e+01   2          2          1          1          1          125        0          YES       
+  iter  value          gnorm          cnorm          ecnorm         flowcnorm      flow_cfl       identity       icnorm         snorm          #fval      #grad      #linesear  iterPDAS   flagPDAS   iterGMRES  flagGMRES  feasible   
+  2     5.523673e-06   3.283572e-01   4.943575e-03   4.943575e-03   2.681947e-08   1.135542e+09   2.500000e+00   0.000000e+00   1.000000e+99   3          3          10         1          1          147        0          YES       
+  iter  value          gnorm          cnorm          ecnorm         flowcnorm      flow_cfl       identity       icnorm         snorm          #fval      #grad      #linesear  iterPDAS   flagPDAS   iterGMRES  flagGMRES  feasible   
+  3     6.030989e-05   1.616198e-01   4.569913e-03   4.569913e-03   2.597758e-08   2.381807e+09   2.500000e+00   0.000000e+00   1.769944e+01   4          4          6          1          1          141        0          YES       
+  iter  value          gnorm          cnorm          ecnorm         flowcnorm      flow_cfl       identity       icnorm         snorm          #fval      #grad      #linesear  iterPDAS   flagPDAS   iterGMRES  flagGMRES  feasible   
+  4     1.677009e-04   9.956967e-02   2.380704e-02   2.380704e-02   1.282601e-08   7.830354e+09   1.616198e+00   0.000000e+00   9.644325e+00   5          5          2          1          1          134        0          YES       
+  iter  value          gnorm          cnorm          ecnorm         flowcnorm      flow_cfl       identity       icnorm         snorm          #fval      #grad      #linesear  iterPDAS   flagPDAS   iterGMRES  flagGMRES  feasible   
+  5     2.281163e-04   1.282491e-01   1.811491e-02   1.811491e-02   1.577761e-08   4.942019e+09   9.956967e-01   0.000000e+00   6.880232e+00   6          6          2          1          1          134        0          YES       
+  iter  value          gnorm          cnorm          ecnorm         flowcnorm      flow_cfl       identity       icnorm         snorm          #fval      #grad      #linesear  iterPDAS   flagPDAS   iterGMRES  flagGMRES  feasible   
+  6     3.586868e-06   3.476400e-02   2.150862e-02   2.150862e-02   2.818313e-10   1.020660e+12   1.282491e+00   0.000000e+00   4.022312e+00   7          7          1          1          1          130        0          YES       
+  iter  value          gnorm          cnorm          ecnorm         flowcnorm      flow_cfl       identity       icnorm         snorm          #fval      #grad      #linesear  iterPDAS   flagPDAS   iterGMRES  flagGMRES  feasible   
+  7     1.124577e-05   2.942890e-02   3.618893e-04   3.618893e-04   2.728458e-09   1.245400e+11   3.476400e-01   0.000000e+00   2.795005e+00   8          8          1          1          1          121        0          YES       
+  iter  value          gnorm          cnorm          ecnorm         flowcnorm      flow_cfl       identity       icnorm         snorm          #fval      #grad      #linesear  iterPDAS   flagPDAS   iterGMRES  flagGMRES  feasible   
+  8     1.082737e-07   3.283612e-03   4.324706e-06   4.324706e-06   2.637338e-11   1.154735e+14   2.942890e-01   0.000000e+00   1.494484e+00   9          9          1          1          1          123        0          YES       
+  iter  value          gnorm          cnorm          ecnorm         flowcnorm      flow_cfl       identity       icnorm         snorm          #fval      #grad      #linesear  iterPDAS   flagPDAS   iterGMRES  flagGMRES  feasible   
+  9     2.316688e-12   1.355703e-04   2.023774e-06   2.023774e-06   2.712817e-11   2.719036e+15   3.283612e-02   0.000000e+00   1.311701e-01   10         10         1          1          1          147        0          YES       
+  iter  value          gnorm          cnorm          ecnorm         flowcnorm      flow_cfl       identity       icnorm         snorm          #fval      #grad      #linesear  iterPDAS   flagPDAS   iterGMRES  flagGMRES  feasible   
+  10    1.432102e-17   3.984394e-06   3.984389e-06   3.984389e-06   1.259004e-15   1.993474e+21   1.355703e-03   0.000000e+00   2.326220e-03   11         11         1          1          1          154        0          YES       
+  iter  value          gnorm          cnorm          ecnorm         flowcnorm      flow_cfl       identity       icnorm         snorm          #fval      #grad      #linesear  iterPDAS   flagPDAS   iterGMRES  flagGMRES  feasible   
+  11    8.005402e-18   3.745355e-06   3.014176e-06   3.014176e-06   4.661943e-13   5.727170e+18   3.984394e-05   0.000000e+00   1.243536e-04   12         12         3          1          1          115        0          YES       
+  iter  value          gnorm          cnorm          ecnorm         flowcnorm      flow_cfl       identity       icnorm         snorm          #fval      #grad      #linesear  iterPDAS   flagPDAS   iterGMRES  flagGMRES  feasible   
+  12    1.006361e-19   3.335507e-06   1.534588e-06   1.534588e-06   6.396015e-13   4.687364e+18   3.745355e-05   0.000000e+00   1.921885e-04   13         13         2          1          1          138        0          YES       
+  iter  value          gnorm          cnorm          ecnorm         flowcnorm      flow_cfl       identity       icnorm         snorm          #fval      #grad      #linesear  iterPDAS   flagPDAS   iterGMRES  flagGMRES  feasible   
+  13    2.847900e-21   2.103016e-10   3.587231e-11   3.587231e-11   1.295051e-15   3.671727e+25   3.335507e-05   0.000000e+00   2.227542e-04   14         14         1          1          0          144        0          YES       
+Optimization Terminated with Status: Converged
+The process took 616.594 seconds to run.
+Total n_vmult for algorithm 139956

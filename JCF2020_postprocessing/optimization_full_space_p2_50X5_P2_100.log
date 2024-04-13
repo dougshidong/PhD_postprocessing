@@ -1,0 +1,21 @@
+********************************************************
+Biros and Ghattas Full-space method...with P2 preconditioner
+Using 9100 design variables: 9000 simulation variables and 100 control variables.
+Line Search: Backtracking satisfying Null Curvature Condition
+********************************************************
+Iteration         Func. val.        ||Lagr. grad.||   ||Constraint||    ||Search dir||    n_kkt_iter        n_linesearches    n_grad            
+1                 0.000288774       0.00316683        0.00798148        9.89215           71                2                 0                 
+2                 2.97657e-06       0.000828901       0.00640307        5.70434           60                1                 0                 
+3                 3.62363e-06       0.000898221       0.000355271       7.70211           64                1                 0                 
+4                 9.15254e-07       0.000189481       0.000172569       2.92559           60                1                 0                 
+5                 2.02477e-07       2.46475e-05       0.000229199       1.78231           60                1                 0                 
+6                 4.35575e-09       1.34945e-05       4.31262e-06       4.86255           64                1                 0                 
+7                 2.01346e-09       1.12451e-08       7.74244e-08       1.93585           64                1                 0                 
+8                 1.261e-09         3.90508e-09       4.03113e-08       1.21491           64                1                 0                 
+9                 8.66588e-10       1.37474e-09       1.0569e-08        0.676206          64                1                 0                 
+10                6.26955e-10       4.56679e-09       8.20616e-09       0.639857          64                1                 0                 
+11                6.33968e-11       2.97635e-09       2.21219e-08       3.07093           71                1                 0                 
+12                1.72544e-11       1.59894e-10       1.6137e-09        1.69931           71                1                 0                 
+13                1.27147e-11       4.79623e-11       2.14974e-10       0.24589           67                1                 0                 
+Optimization Terminated with Status: Converged
+The process took 1067.15 seconds to run.

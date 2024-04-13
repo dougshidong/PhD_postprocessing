@@ -1,0 +1,14 @@
+********************************************************
+Biros and Ghattas Full-space method...with P2 preconditioner
+Using 9020 design variables: 9000 simulation variables and 20 control variables.
+Line Search: Backtracking satisfying Null Curvature Condition
+********************************************************
+
+1                 0.0007571         0.00120693        0.00171745        15.0752           28                3                 0                 
+2                 0.000163198       0.00142592        0.00425968        53.0651           31                2                 0                 
+3                 6.13093e-07       0.00114096        0.00294789        101.725           29                1                 0                 
+4                 6.41464e-09       3.72326e-05       2.04345e-05       119.605           29                1                 0                 
+5                 1.29865e-13       8.47843e-08       3.96723e-07       14.5326           33                1                 0                 
+6                 3.67488e-17       1.17522e-11       4.9779e-08        0.117285          29                1                 0                 
+Optimization Terminated with Status: Converged
+The process took 343.527 seconds to run.

@@ -1,0 +1,14 @@
+run.
+********************************************************
+Biros and Ghattas Full-space method...with P4 preconditioner
+Using 4060 design variables: 4000 simulation variables and 60 control variables.
+Line Search: Backtracking satisfying Null Curvature Condition
+********************************************************
+Iteration         Func. val.        ||Lagr. grad.||   ||Constraint||    ||Search dir||    search_ctl_norm   search_sim_norm   search_adj_norm   n_kkt_iter        n_linesearches    n_grad            n_vmult           dRdW_form         dRdW_mult         dRdX_mult         d2R_mult          
+1                 8.0988e-06        0.00334286        0.0241479         12.1661           11.5618           2.44191           2.89431           41                1                 0                 57484             2                 53864             174               332               
+2                 7.07395e-08       6.65999e-05       0.000365592       11.4272           11.4205           0.195601          0.338167          33                1                 0                 103612            3                 97115             315               600               
+3                 2.30726e-11       1.34112e-06       4.59945e-06       0.494111          0.492306          0.0209106         0.0366438         41                1                 0                 158803            4                 148773            488               932               
+4                 1.36119e-13       3.22555e-10       3.72804e-10       0.106744          0.106739          0.000382439       0.000958923       43                1                 0                 216232            5                 202505            669               1280              
+Optimization Terminated with Status: Converged
+The process took 41.3456 seconds to run.
+Total n_vmult for algorithm 216232

@@ -1,0 +1,53 @@
+Starting optimization with 160...
+Optimizing FFD points to obtain target Gaussian bump...
+
+Quasi-Newton Method with Limited-Memory BFGS
+Line Search: Backtracking satisfying Null Curvature Condition
+  iter  value          gnorm          snorm          #fval     #grad     ls_#fval  ls_#grad  n_vmult   
+  0     1.460802e-03   5.584927e-03   
+  1     1.445252e-03   5.552716e-03   2.792463e-03   2         2         1         0         175873    
+  2     4.311963e-04   2.904826e-03   2.411176e-01   3         3         1         0         179339    
+  3     1.350809e-04   1.564777e-03   1.332490e-01   4         4         1         0         182991    
+  4     4.154000e-05   8.611813e-04   8.079903e-02   5         5         1         0         186694    
+  5     1.338608e-05   6.237402e-04   5.898913e-02   6         6         1         0         190463    
+  6     4.468047e-06   2.589474e-04   2.496670e-02   7         7         1         0         193384    
+  7     2.776334e-06   1.440815e-04   1.048000e-02   8         8         1         0         196416    
+  8     2.025742e-06   8.602314e-05   7.882755e-03   9         9         1         0         199481    
+  9     1.561389e-06   6.221251e-05   7.439139e-03   10        10        1         0         202555    
+  10    1.204041e-06   5.418756e-05   7.944366e-03   11        11        1         0         205623    
+  11    9.481242e-07   6.621035e-05   8.934717e-03   12        12        1         0         208652    
+  12    7.616251e-07   3.627367e-05   8.461596e-03   13        13        1         0         211681    
+  13    7.089069e-07   2.979389e-05   3.235555e-03   14        14        1         0         214800    
+  14    6.219909e-07   2.230779e-05   5.407704e-03   15        15        1         0         217892    
+  15    5.201112e-07   1.957244e-05   7.768209e-03   16        16        1         0         220960    
+  16    4.285472e-07   2.031349e-05   8.848696e-03   17        17        1         0         224058    
+  17    3.690659e-07   3.830191e-05   1.192516e-02   18        18        1         0         227072    
+  18    3.148149e-07   2.490321e-05   6.184329e-03   19        19        1         0         230134    
+  19    2.836214e-07   1.656771e-05   4.181260e-03   20        20        1         0         233232    
+  20    2.579309e-07   1.073644e-05   4.104076e-03   21        21        1         0         236354    
+  21    2.373258e-07   9.011800e-06   3.999341e-03   22        22        1         0         239488    
+Optimization Terminated with Status: Converged
+ Done target optimization...
+ Resetting problem to initial conditions and target previous FFD points 
+ and aim for machine precision functional value....
+The process took 361.011 seconds to run.
+********************************************************
+Biros and Ghattas Full-space method...with P2A preconditioner
+Using 16160 design variables: 16000 simulation variables and 160 control variables.
+Line Search: Backtracking satisfying Null Curvature Condition
+********************************************************
+Iteration         Func. val.        ||Lagr. grad.||   ||Constraint||    ||Search dir||    search_ctl_norm   search_sim_norm   search_adj_norm   n_kkt_iter        n_linesearches    n_grad            n_vmult_total     
+
+Iteration         Func. val.        ||Lagr. grad.||   ||Constraint||    ||Search dir||    search_ctl_norm   search_sim_norm   search_adj_norm   n_kkt_iter        n_linesearches    n_grad            n_vmult_total     
+1                 6.66999e-06       0.00511405        0.01864           7.92102           1.98037           4.68258           6.07406           595               1                 0                 38112             
+Iteration         Func. val.        ||Lagr. grad.||   ||Constraint||    ||Search dir||    search_ctl_norm   search_sim_norm   search_adj_norm   n_kkt_iter        n_linesearches    n_grad            n_vmult_total     
+2                 7.92456e-07       0.000232673       0.000445559       1.45179           1.0694            0.3921            0.90018           430               1                 0                 65192             
+Iteration         Func. val.        ||Lagr. grad.||   ||Constraint||    ||Search dir||    search_ctl_norm   search_sim_norm   search_adj_norm   n_kkt_iter        n_linesearches    n_grad            n_vmult_total     
+3                 9.03902e-10       4.39352e-05       7.03203e-05       1.04233           1.00544           0.139509          0.236803          499               1                 0                 96550             
+Iteration         Func. val.        ||Lagr. grad.||   ||Constraint||    ||Search dir||    search_ctl_norm   search_sim_norm   search_adj_norm   n_kkt_iter        n_linesearches    n_grad            n_vmult_total     
+4                 3.13492e-12       7.45681e-08       3.67503e-08       0.201945          0.200461          0.00532891        0.0238518         518               1                 0                 129086            
+Iteration         Func. val.        ||Lagr. grad.||   ||Constraint||    ||Search dir||    search_ctl_norm   search_sim_norm   search_adj_norm   n_kkt_iter        n_linesearches    n_grad            n_vmult_total     
+5                 3.30393e-13       2.11169e-11       1.34513e-10       0.140912          0.140911          0.000268252       7.4456e-05        601               1                 0                 166768            
+Optimization Terminated with Status: Converged
+The process took 1084.82 seconds to run.
+Total n_vmult for algorithm 166768

@@ -12,6 +12,8 @@ import count_flops
 
 pdfName = './bump_optimization_results_more_design.pdf'
 pdfName = './bump_optimization_results.pdf'
+pdfName = './bump_optimization_results_largerfont.pdf'
+pdfName = './bump_optimization_results_more_design_largerfont.pdf'
 
 pp=PdfPages(pdfName)
 
@@ -22,8 +24,10 @@ marker_size = 6
 
 square_figsize=(8,6)
 big_figsize=(14,12)
-wide_figsize=(14,6)
+wide_figsize=(14,7)
 figsize = wide_figsize
+figsize = [x*0.65 for x  in wide_figsize]
+big_figsize=[x*0.65 for x  in big_figsize]
 
 table_print = ''
 
@@ -38,8 +42,8 @@ poly_list = [1,2,3]
 n_dofs_list = [4000,9000,16000]
 n_design_list = [20,40,60,80,100]
 
-n_design_list_more = [20,40,60,80,100,160,320,640]
 n_design_list_more = n_design_list
+n_design_list_more = [20,40,60,80,100,160,320,640]
 
 GradientvsSubiterations_design_list = [20,60,100]
 #ReducedGradientvsSubiterations_design_list = [20,40,60,80,100]
@@ -166,7 +170,7 @@ for n_cells in n_cells_list:
                         color=color_str[ms_index],
                         marker=marker_str[ms_index],
                         ms=marker_size,
-                        label=r'RS BFGS, $n$ = ' + str(n_design))
+                        label=r'RS-QN, $n$ = ' + str(n_design))
 
             if poly-1 == 0 and n_design in ReducedGradientvsSubiterations_design_list:
                 ax = ax_gradvscycles
@@ -176,7 +180,7 @@ for n_cells in n_cells_list:
                         color=color_str[ms_index],
                         marker=marker_str[ms_index],
                         ms=marker_size,
-                        label=r'RS BFGS, $n$ = ' + str(n_design))
+                        label=r'RS-QN, $n$ = ' + str(n_design))
 
             plt.legend()
             plt.xlabel(r'Design Cycles')
@@ -195,16 +199,16 @@ for n_cells in n_cells_list:
 
         plt.figure("Iterations_vs_nctl_ReducedSpace",figsize=figsize)
         plt.plot(n_design_list, n_iterations_list, '-o', ms=marker_size,
-                label=r'RS BFGS, $m$ = '+str(n_dofs_list[poly-1]))
+                label=r'RS-QN, $m$ = '+str(n_dofs_list[poly-1]))
 
         plt.figure("work_vs_nctl_2",figsize=figsize)
-        plt.semilogy(n_design_list,
+        plt.plot(n_design_list,
                 work_list,
                 linestyle = linestyle_str[poly-1],
                 color=color_str[4],
                 marker=marker_str[4],
                 ms=marker_size,
-                label=r'RS BFGS, $m$ = '+str(n_dofs_list[poly-1]))
+                label=r'RS-QN, $m$ = '+str(n_dofs_list[poly-1]))
 
 opttype = 'optimization_reduced_space_newton'
 plt.figure(figsize=figsize)
@@ -290,7 +294,7 @@ for n_cells in n_cells_list:
                         color=color_str[5],
                         marker=marker_str[ms_index],
                         ms=marker_size,
-                        label=r'RS Newton, $n$ = ' + str(n_design))
+                        label=r'RS-N, $n$ = ' + str(n_design))
 
             if poly-1 == 0 and n_design in ReducedGradientvsSubiterations_design_list:
                 ax = ax_gradvscycles
@@ -300,7 +304,7 @@ for n_cells in n_cells_list:
                         color=color_str[5],
                         marker=marker_str[ms_index],
                         ms=marker_size,
-                        label=r'RS Newton, $n$ = ' + str(n_design))
+                        label=r'RS-N, $n$ = ' + str(n_design))
 
             plt.legend()
             plt.xlabel(r'Design Cycles')
@@ -319,22 +323,22 @@ for n_cells in n_cells_list:
         pwork_list.append(work_list)
 #        plt.figure("Iterations_vs_nctl_ReducedSpace",figsize=figsize)
 #        plt.plot(n_design_list_more, n_iterations_list, '-.o', ms=marker_size,
-#                label=r'RS Newton, $m$ = '+str(n_dofs_list[poly-1]))
+#                label=r'RS-N, $m$ = '+str(n_dofs_list[poly-1]))
 
         plt.figure("work_vs_nctl_2",figsize=figsize)
-        plt.semilogy(n_design_list_more, work_list, '-.o',
+        plt.plot(n_design_list_more, work_list, '-.o',
                 linestyle = linestyle_str[poly-1],
                 color=color_str[5],
                 marker=marker_str[5],
                 ms=marker_size,
-                label=r'RS Newton, $m$ = '+str(n_dofs_list[poly-1]))
+                label=r'RS-N, $m$ = '+str(n_dofs_list[poly-1]))
         plt.figure("work_vs_nctl_3",figsize=figsize)
-        plt.semilogy(n_design_list_more, work_list, '-.o',
+        plt.plot(n_design_list_more, work_list, '-.o',
                 linestyle = linestyle_str[poly-1],
                 color=color_str[5],
                 marker=marker_str[5],
                 ms=marker_size,
-                label=r'RS Newton, $m$ = '+str(n_dofs_list[poly-1]))
+                label=r'RS-N, $m$ = '+str(n_dofs_list[poly-1]))
 #                label=r'FS RNSQP, $m$ = '+str(n_dofs_list[poly-1]))
 
     for i,n_design in enumerate(WorkvsNDOFS_design_list):
@@ -346,19 +350,19 @@ for n_cells in n_cells_list:
             y.append(pwork_list[poly-1][j])
 
         plt.figure("work_vs_nstate",figsize=figsize)
-        plt.semilogy(x, y,
+        plt.plot(x, y,
                 linestyle = linestyle_str[i],
                 color=color_str[5],
                 marker=marker_str[i],
                 ms=marker_size,
-                label=r'RS Newton, $n$ = '+str(n_design))
+                label=r'RS-N, $n$ = '+str(n_design))
 
 
 #for n_cells in n_cells_list:
 #    for poly in poly_list:
 #        plt.figure("work_vs_nctl2",figsize=figsize)
 #        plt.plot(n_design_list, n_vmult_apply_hessian_list[poly-1], ':^', ms=marker_size,
-#                label=r'RS Newton, $m$ = '+str(n_dofs_list[poly-1])) ' apply AD operators')
+#                label=r'RS-N, $m$ = '+str(n_dofs_list[poly-1])) ' apply AD operators')
 
 opttype = 'optimization_full_space_p4'
 #plt.figure(figsize=figsize)
@@ -477,7 +481,7 @@ for n_cells in n_cells_list:
                 label=r'FS $\mathbf{P}_4$, $m$ = '+str(n_dofs_list[poly-1]))
 
         plt.figure("work_vs_nctl",figsize=figsize)
-        plt.semilogy(n_design_list,
+        plt.plot(n_design_list,
                 work_list,
                 linestyle = linestyle_str[poly-1],
                 color=color_str[0],
@@ -613,7 +617,7 @@ for n_cells in n_cells_list:
                 label=r'FS $\mathbf{P}_2$, $m$ = '+str(n_dofs_list[poly-1]))
 
         plt.figure("work_vs_nctl",figsize=figsize)
-        plt.semilogy(n_design_list,
+        plt.plot(n_design_list,
                 work_list,
                 linestyle = linestyle_str[poly-1],
                 color=color_str[1],
@@ -752,7 +756,7 @@ for n_cells in n_cells_list:
                 label=r'FS $\tilde{\mathbf{P}}_4$, $m$ = '+str(n_dofs_list[poly-1]))
 
         plt.figure("work_vs_nctl",figsize=figsize)
-        plt.semilogy(n_design_list,
+        plt.plot(n_design_list,
                 work_list,
                 linestyle = linestyle_str[poly-1],
                 color=color_str[2],
@@ -895,15 +899,15 @@ for n_cells in n_cells_list:
                         ms=marker_size,
                         label=r'$\tilde{\mathbf{P}}_2$, $n$ = ' + str(n_design))
             
-            if n_design in ReducedGradientvsSubiterations_design_list:
-                ax = axs_RS_subiter[poly-1]
-                ms_index = ReducedGradientvsSubiterations_design_list.index(n_design)
-                ax.semilogy(itera, gnorm,
-                        linestyle = linestyle_str[2],
-                        color=color_str[6],
-                        marker=marker_str[ms_index],
-                        ms=marker_size,
-                        label=r'FS $\tilde{\mathbf{P}}_2$, $n$ = ' + str(n_design))
+            #if n_design in ReducedGradientvsSubiterations_design_list:
+            #    ax = axs_RS_subiter[poly-1]
+            #    ms_index = ReducedGradientvsSubiterations_design_list.index(n_design)
+            #    ax.semilogy(itera, gnorm,
+            #            linestyle = linestyle_str[2],
+            #            color=color_str[6],
+            #            marker=marker_str[ms_index],
+            #            ms=marker_size,
+            #            label=r'FS $\tilde{\mathbf{P}}_2$, $n$ = ' + str(n_design))
 
             if poly-1 == 0 and n_design in ReducedGradientvsSubiterations_design_list:
                 ax = ax_gradvscycles
@@ -931,7 +935,7 @@ for n_cells in n_cells_list:
                 label=r'FS $\tilde{\mathbf{P}}_2$, $m$ = '+str(n_dofs_list[poly-1]))
 
         plt.figure("work_vs_nctl",figsize=figsize)
-        plt.semilogy(n_design_list_more,
+        plt.plot(n_design_list_more,
                 work_list,
                 linestyle = linestyle_str[poly-1],
                 color=color_str[3],
@@ -949,7 +953,7 @@ for n_cells in n_cells_list:
                 label=r'FS $\tilde{\mathbf{P}}_2$, $m$ = '+str(n_dofs_list[poly-1]))
 
         plt.figure("work_vs_nctl_3",figsize=figsize)
-        plt.semilogy(n_design_list_more,
+        plt.plot(n_design_list_more,
                 work_list,
                 linestyle = linestyle_str[poly-1],
                 color=color_str[3],
@@ -966,7 +970,7 @@ for n_cells in n_cells_list:
             y.append(pwork_list[poly-1][j])
 
         plt.figure("work_vs_nstate",figsize=figsize)
-        plt.semilogy(x, y,
+        plt.plot(x, y,
                 linestyle = linestyle_str[i],
                 color=color_str[3],
                 marker=marker_str[i],
@@ -985,111 +989,183 @@ for poly in poly_list:
     plt.close()
 
 #plt.figure('FullspaceGradientvsSubiterations',figsize=figsize)
-axs_FS_subiter[0].legend()
+#axs_FS_subiter[0].legend()
 for i,ax in enumerate(axs_FS_subiter):
-    ax.set_title(r'$m$ = ' + str(n_dofs_list[i]))
-    #ax.set(xlabel='Number of subiterations', ylabel='Gradient Norm')
+    ax.set_title(r'State Variables, $m$ = ' + str(n_dofs_list[i]))
+    #ax.set(xlabel='Number of Subiterations', ylabel='Gradient Norm')
     ax.set(ylabel='Gradient Norm')
     ax.grid(b=True, which='major', color='black', linestyle='-',alpha=0.2)
     #ax.legend()
     #ax.tight_layout()
-axs_FS_subiter[2].set(xlabel='Number of subiterations')
+axs_FS_subiter[2].set(xlabel='Number of Subiterations')
+
+# Get legend labels from axs_FS_subiter[0]
+handles, labels = axs_FS_subiter[0].get_legend_handles_labels()
+handles = [matplotlib.lines.Line2D([0], [0], color='w', marker='o', markersize=0)] + handles
+#labels = ['$m$ = # state var.'] + labels
+labels = ['$n$ = # control var.'] + labels
+plt.legend(handles, labels, loc='center left', bbox_to_anchor=(1.0, 0.5))
+# Plot legend outside the plot on the right
+fig_FS_subiter.legend(handles, labels, loc='upper right', bbox_to_anchor=(0.98, 0.92), framealpha=1.0)
+
 #plt.xlabel(r'Number of Subiterations')
 #plt.ylabel(r'Gradient Norm')
 #plt.grid(b=True, which='major', color='black', linestyle='-',alpha=0.2)
 #plt.legend()
-fig_FS_subiter.suptitle(r'Full-space Gradient vs Subiterations')
+#fig_FS_subiter.suptitle(r'Full-space Gradient vs Subiterations')
 fig_FS_subiter.tight_layout()
 fig_FS_subiter.subplots_adjust(top=0.92)
+### 22
 pp.savefig(fig_FS_subiter,bbx_inches='tight')
 #fig_FS_subiter.close()
 
 plt.figure("Iterations_vs_nctl_FullSpace",figsize=figsize)
-plt.title(r'Full-space Design Cycles vs Control Variables')
+#plt.title(r'Full-space Design Cycles vs Control Variables')
 plt.ylabel(r'Number of Design Cycles to Convergence')
 plt.xlabel(r'Number of Control Variables $n$')
 plt.yticks(np.arange(3, 6, 1.0))
 plt.grid(b=True, which='major', color='black', linestyle='-',alpha=0.2)
-plt.legend()
+#plt.legend()
+handles, labels = plt.gca().get_legend_handles_labels()
+handles = [matplotlib.lines.Line2D([0], [0], color='w', marker='o', markersize=0)] + handles
+labels = ['$m$ = # state var.'] + labels
+#labels = ['$n$ = # control var.'] + labels
+plt.legend(handles, labels)#, loc='center left', bbox_to_anchor=(1.0, 0.5))
 plt.tight_layout()
+### 23
 pp.savefig(bbx_inches='tight')
 plt.close()
 
 plt.figure("work_vs_nctl",figsize=figsize)
-plt.title(r'Work Units vs Control Variables')
+#plt.title(r'Work Units vs Control Variables')
 plt.xlabel(r'Number of Control Variables $n$')
 plt.ylabel(r'Work Units to Convergence')
 plt.grid(b=True, which='major', color='black', linestyle='-',alpha=0.2)
-plt.legend()
+#plt.legend()
+#plt.legend(loc='upper left', bbox_to_anchor=(1.01, 1.0))
+handles, labels = plt.gca().get_legend_handles_labels()
+handles = [matplotlib.lines.Line2D([0], [0], color='w', marker='o', markersize=0)] + handles
+labels = ['$m$ = # state var.'] + labels
+#labels = ['$n$ = # control var.'] + labels
+plt.legend(handles, labels, loc='center left', bbox_to_anchor=(1.0, 0.5))
 plt.tight_layout()
+### 24
 pp.savefig(bbx_inches='tight')
 plt.close()
 
 plt.figure("nkkt_vs_nctl",figsize=figsize)
-plt.title(r'Total Subiterations vs Control Variables')
+#plt.title(r'Total Subiterations vs Control Variables')
 plt.xlabel(r'Number of Control Variables $n$')
 plt.ylabel(r'Total Subiterations to Convergence')
 plt.grid(b=True, which='major', color='black', linestyle='-',alpha=0.2)
-plt.legend(loc=2)
+#plt.legend(loc=2)
+# Put legend outside on the right
+#plt.legend(loc='upper left', bbox_to_anchor=(1.01, 1.0))
+handles, labels = plt.gca().get_legend_handles_labels()
+handles = [matplotlib.lines.Line2D([0], [0], color='w', marker='o', markersize=0)] + handles
+labels = ['$m$ = # state var.'] + labels
+#labels = ['$n$ = # control var.'] + labels
+plt.legend(handles, labels, loc='center left', bbox_to_anchor=(1.0, 0.5))
 plt.tight_layout()
+### 25
 pp.savefig(bbx_inches='tight')
 plt.close()
 
 plt.figure("work_vs_nctl_2",figsize=figsize)
-plt.title(r'Work Units vs Control Variables')
+#plt.title(r'Work Units vs Control Variables')
 plt.xlabel(r'Number of Control Variables $n$')
-plt.ylabel(r'Work units to Convergence')
+plt.ylabel(r'Work Units to Convergence')
 plt.grid(b=True, which='major', color='black', linestyle='-',alpha=0.2)
-plt.legend()
+#plt.legend(loc='lower right')
+#plt.legend(loc='upper left', bbox_to_anchor=(1.01, 1.0))
+handles, labels = plt.gca().get_legend_handles_labels()
+handles = [matplotlib.lines.Line2D([0], [0], color='w', marker='o', markersize=0)] + handles
+labels = ['$m$ = # state var.'] + labels
+#labels = ['$n$ = # control var.'] + labels
+plt.legend(handles, labels, loc='center left', bbox_to_anchor=(1, 0.5))
 plt.tight_layout()
+### 26
 pp.savefig(bbx_inches='tight')
 plt.close()
 
 plt.figure("Iterations_vs_nctl_ReducedSpace",figsize=figsize)
-plt.title(r'Reduced-space Design Cycles vs Control Variables')
+#plt.title(r'Reduced-space Design Cycles vs Control Variables')
 plt.xlabel(r'Number of Control Variables $n$')
 plt.ylabel(r'Number of Design Cycles to Convergence')
 #plt.yticks(np.arange(3, 6, 1.0))
 plt.grid(b=True, which='major', color='black', linestyle='-',alpha=0.2)
-plt.legend()
+#plt.legend()
+handles, labels = plt.gca().get_legend_handles_labels()
+handles = [matplotlib.lines.Line2D([0], [0], color='w', marker='o', markersize=0)] + handles
+labels = ['$m$ = # state var.'] + labels
+#labels = ['$n$ = # control var.'] + labels
+plt.legend(handles, labels)#, loc='lower right', bbox_to_anchor=(0.98, 0.075,), framealpha=1.0)
 plt.tight_layout()
+### 27
 pp.savefig(bbx_inches='tight')
 plt.close()
 
 for i,ax in enumerate(axs_RS_subiter):
-    ax.set_title(r'$m$ = ' + str(n_dofs_list[i]))
+    ax.set_title(r'State Variables, $m$ = ' + str(n_dofs_list[i]))
     #ax.set(xlabel='Number of design cycles', ylabel='Gradient Norm')
     ax.set(ylabel='Gradient Norm')
     ax.grid(b=True, which='major', color='black', linestyle='-',alpha=0.2)
 #axs_RS_subiter[2].set(xlabel='Number of design cycles or Newton subiterations')
-axs_RS_subiter[2].legend()
+#axs_RS_subiter[2].legend()
+# Plot legend outside the plot on the right
+handles, labels = axs_RS_subiter[0].get_legend_handles_labels()
+handles = [matplotlib.lines.Line2D([0], [0], color='w', marker='o', markersize=0)] + handles
+#labels = ['$m$ = # state var.'] + labels
+labels = ['$n$ = # control var.'] + labels
+#fig_RS_subiter.legend(handles, labels, loc='lower right', bbox_to_anchor=(0.98, 0.075,), framealpha=1.0)
+fig_RS_subiter.legend(handles, labels, loc='center left', bbox_to_anchor=(1.0, 0.5))
+
+#legend1 = fig_RS_subiter.legend(handles, labels, loc='upper left', bbox_to_anchor=(1.01, 1.0), framealpha=1.0)
+#legend1 = fig_RS_subiter.legend(handles, labels, loc='lower right', bbox_to_anchor=(1.00, 0.0), framealpha=1.0)
+
 axs_RS_subiter[2].set(xlabel='Design Cycles')
-fig_RS_subiter.suptitle(r'Reduced-space Gradient vs Design Cycles')
+#fig_RS_subiter.suptitle(r'Reduced-space Gradient vs Design Cycles')
 fig_RS_subiter.tight_layout()
 fig_RS_subiter.subplots_adjust(top=0.92)
-pp.savefig(fig_RS_subiter,bbx_inches='tight')
+### 28
+#pp.savefig(fig_RS_subiter, bbox_extra_artists=(legend1,), bbox_inches='tight')
+pp.savefig(fig_RS_subiter, bbox_inches='tight')
 #fig_RS_subiter.close()
 #plt.close()
 
 
 plt.figure("work_vs_nctl_3",figsize=figsize)
-plt.title(r'Work Units vs Control Variables')
+#plt.title(r'Work Units vs Control Variables')
 plt.xlabel(r'Number of Control Variables $n$')
 plt.ylabel(r'Work Units to Convergence')
 plt.grid(b=True, which='major', color='black', linestyle='-',alpha=0.2)
-plt.legend()
+#plt.legend()
+#plt.legend(loc='upper left', bbox_to_anchor=(1.01, 1.0))
+handles, labels = plt.gca().get_legend_handles_labels()
+handles = [matplotlib.lines.Line2D([0], [0], color='w', marker='o', markersize=0)] + handles
+labels = ['$m$ = # state var.'] + labels
+#labels = ['$n$ = # control var.'] + labels
+plt.legend(handles, labels, loc='center left', bbox_to_anchor=(1.0, 0.5))
 plt.tight_layout()
+### 29
 pp.savefig(bbx_inches='tight')
 plt.close()
 
 plt.figure("work_vs_nstate",figsize=figsize)
-plt.title(r'Work Units vs State Variables')
+#plt.title(r'Work Units vs State Variables')
 plt.xlabel(r'Number of State Variables $m$')
 plt.ylabel(r'Work Units to Convergence')
 plt.autoscale()
 plt.grid(b=True, which='major', color='black', linestyle='-',alpha=0.2)
-plt.legend(loc=4)
+#plt.legend(loc=4)
+plt.legend(loc='upper left', bbox_to_anchor=(1.01, 1.0))
+handles, labels = plt.gca().get_legend_handles_labels()
+handles = [matplotlib.lines.Line2D([0], [0], color='w', marker='o', markersize=0)] + handles
+#labels = ['$m$ = # state var.'] + labels
+labels = ['$n$ = # control var.'] + labels
+plt.legend(handles, labels, loc='center left', bbox_to_anchor=(1.0, 0.5))
 plt.tight_layout()
+### 30
 pp.savefig(bbx_inches='tight')
 
 plt.close()

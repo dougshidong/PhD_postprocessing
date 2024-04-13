@@ -1,0 +1,26 @@
+Starting optimization with 40...
+
+Newton-Krylov using GMRES with Limited-Memory BFGS preconditioning
+Line Search: Backtracking satisfying Null Curvature Condition
+-------------------------------------------------------------------------------------------------------------
+Newton-Krylov status output definitions
+
+  iter     - Number of iterates (steps taken) 
+  value    - Objective function value 
+  gnorm    - Norm of the gradient
+  snorm    - Norm of the step (update to optimization vector)
+  #fval    - Cumulative number of times the objective function was evaluated
+  #grad    - Number of times the gradient was computed
+  iterCG   - Number of Krylov iterations used to compute search direction
+  flagCG   - Krylov solver flag
+-------------------------------------------------------------------------------------------------------------
+  iter  value          gnorm          snorm          #fval     #grad     iterCG    flagCG    ls_#fval  ls_#grad  n_vmult           dRdW_form         dRdW_mult         dRdX_mult         d2R_mult          
+  0     3.583818e-03   8.914019e-02   
+  1     5.988770e-05   1.629853e-02   1.249109e+00   2         2         28        0         1         0         21224             7                 19852             60                116               
+  2     1.208591e-07   4.151247e-04   1.155983e+00   3         3         23        0         1         0         37775             11                35308             109               212               
+  3     9.590887e-09   2.882262e-06   6.480191e-02   4         4         21        0         1         0         53276             15                49798             154               300               
+  4     3.486388e-12   1.031243e-07   2.704721e-02   5         5         28        0         1         0         68917             19                64134             213               416               
+  5     4.930970e-13   1.021739e-09   7.645796e-04   6         6         28        0         1         0         73226             22                67158             272               532               
+Optimization Terminated with Status: Converged
+The process took 97.1426 seconds to run.
+Total n_vmult for algorithm 73226

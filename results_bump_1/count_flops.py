@@ -174,6 +174,15 @@ def form_dRdW_AD_cost(dim,poly):
     form_dRdW_face_flops   = forward_mode_ratio(2*n_dofs_per_cell) * f_flops
     form_dRdW_flops        = form_dRdW_volume_flops + dim * form_dRdW_face_flops
     form_dRdW_cost         = form_dRdW_flops / r_flops
+    
+    if poly == 0:
+        form_dRdW_cost *= 1.26
+    if poly == 1:
+        form_dRdW_cost *= 2.5
+    if poly == 2:
+        form_dRdW_cost *= 4.0
+    if poly == 3:
+        form_dRdW_cost *= 12.0
 
     return form_dRdW_cost
 

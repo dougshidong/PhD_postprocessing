@@ -1,0 +1,25 @@
+Starting optimization with 20...
+
+Newton-Krylov using GMRES with Limited-Memory BFGS preconditioning
+Line Search: Backtracking satisfying Null Curvature Condition
+-------------------------------------------------------------------------------------------------------------
+Newton-Krylov status output definitions
+
+  iter     - Number of iterates (steps taken) 
+  value    - Objective function value 
+  gnorm    - Norm of the gradient
+  snorm    - Norm of the step (update to optimization vector)
+  #fval    - Cumulative number of times the objective function was evaluated
+  #grad    - Number of times the gradient was computed
+  iterCG   - Number of Krylov iterations used to compute search direction
+  flagCG   - Krylov solver flag
+-------------------------------------------------------------------------------------------------------------
+  iter  value          gnorm          snorm          #fval     #grad     iterCG    flagCG    ls_#fval  ls_#grad  n_vmult           dRdW_form         dRdW_mult         dRdX_mult         d2R_mult          
+  0     3.264208e-03   1.019750e-01   
+  1     4.477985e-05   1.350781e-02   1.649333e-01   2         2         17        0         1         0         13637             6                 12747             38                72                
+  2     6.890825e-08   3.110168e-04   1.394340e-01   3         3         16        0         1         0         26940             10                25249             73                140               
+  3     1.915247e-09   3.309356e-06   8.346438e-03   4         4         10        0         1         0         35112             14                32872             96                184               
+  4     4.602777e-12   1.685307e-08   1.080594e-02   5         5         18        0         1         0         45587             18                42462             135               260               
+Optimization Terminated with Status: Converged
+The process took 64.1882 seconds to run.
+Total n_vmult for algorithm 45587

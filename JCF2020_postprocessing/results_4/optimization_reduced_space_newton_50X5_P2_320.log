@@ -1,0 +1,26 @@
+run.
+Starting optimization with 320...
+
+Newton-Krylov using GMRES with Limited-Memory BFGS preconditioning
+Line Search: Backtracking satisfying Null Curvature Condition
+-------------------------------------------------------------------------------------------------------------
+Newton-Krylov status output definitions
+
+  iter     - Number of iterates (steps taken) 
+  value    - Objective function value 
+  gnorm    - Norm of the gradient
+  snorm    - Norm of the step (update to optimization vector)
+  #fval    - Cumulative number of times the objective function was evaluated
+  #grad    - Number of times the gradient was computed
+  iterCG   - Number of Krylov iterations used to compute search direction
+  flagCG   - Krylov solver flag
+-------------------------------------------------------------------------------------------------------------
+  iter  value          gnorm          snorm          #fval     #grad     iterCG    flagCG    ls_#fval  ls_#grad  n_vmult   dRdW_form         dRdW_mult         dRdX_mult         d2R_mult          
+  0     1.453363e-03   4.690591e-03   
+  1     1.746974e-05   4.123394e-04   6.377441e-01   2         2         55        0         1         0         49718     8                 45912             114               224               
+  2     4.944514e-09   7.215363e-06   1.241616e-01   3         3         59        0         1         0         99729     14                92316             235               464               
+  3     2.356875e-15   2.709442e-09   1.637207e-02   4         4         65        0         1         0         153772    19                142680            368               728               
+  4     8.728506e-20   7.005787e-14   1.272587e-03   5         5         74        0         1         0         213680    23                198711            519               1028              
+Optimization Terminated with Status: Converged
+The process took 363.06 seconds to run.
+Total n_vmult for algorithm 213680

@@ -1,0 +1,60 @@
+Starting optimization with 60...
+Optimizing FFD points to obtain target Gaussian bump...
+
+Quasi-Newton Method with Limited-Memory BFGS
+Line Search: Backtracking satisfying Null Curvature Condition
+  iter  value          gnorm          snorm          #fval     #grad     ls_#fval  ls_#grad  n_vmult   
+  0     1.460201e-03   6.826447e-03   
+  1     1.414032e-03   6.700248e-03   6.826447e-03   2         2         1         0         192178    
+  2     8.581085e-05   8.695164e-04   3.693049e-01   3         3         1         0         195317    
+  3     4.855924e-05   4.414736e-04   6.361448e-02   4         4         1         0         197997    
+  4     2.985074e-05   3.469073e-04   6.280718e-02   5         5         1         0         200758    
+  5     1.715707e-05   3.280187e-04   7.783714e-02   6         6         1         0         203558    
+  6     1.275539e-05   2.263374e-04   4.299333e-02   8         7         2         0         208470    
+  7     1.010194e-05   1.419479e-04   2.297206e-02   9         8         1         0         210541    
+  8     7.601184e-06   1.235768e-04   3.426926e-02   10        9         1         0         212534    
+  9     5.699978e-06   9.775812e-05   3.533346e-02   11        10        1         0         214605    
+  10    3.889094e-06   1.038111e-04   5.268546e-02   12        11        1         0         216700    
+  11    3.725688e-06   1.563155e-04   3.172901e-02   14        12        2         0         220913    
+  12    3.129741e-06   4.501199e-05   8.625159e-03   15        13        1         0         222978    
+  13    2.977567e-06   4.195969e-05   5.557766e-03   16        14        1         0         225172    
+  14    2.599230e-06   5.145481e-05   1.741687e-02   17        15        1         0         227387    
+  15    2.080303e-06   4.871394e-05   3.109621e-02   18        16        1         0         229560    
+  16    1.791724e-06   5.237075e-05   3.578165e-02   19        17        1         0         231682    
+  17    1.649357e-06   3.403095e-05   1.903305e-02   20        18        1         0         233789    
+  18    1.561063e-06   1.973508e-05   6.425450e-03   21        19        1         0         236034    
+  19    1.445070e-06   2.143467e-05   1.063978e-02   22        20        1         0         238216    
+  20    1.298115e-06   2.848189e-05   2.307824e-02   23        21        1         0         240425    
+  21    1.187892e-06   1.828104e-05   2.846937e-02   24        22        1         0         242604    
+  22    1.175070e-06   1.735386e-05   1.018198e-02   26        23        2         0         246343    
+  23    1.158548e-06   3.801846e-06   4.128377e-03   27        24        1         0         248549    
+Optimization Terminated with Status: Converged
+ Done target optimization...
+ Resetting problem to initial conditions and target previous FFD points 
+ and aim for machine precision functional value....
+The process took 99.2982 seconds to run.
+Starting optimization with 60...
+
+Newton-Krylov using GMRES with Limited-Memory BFGS preconditioning
+Line Search: Backtracking satisfying Null Curvature Condition
+-------------------------------------------------------------------------------------------------------------
+Newton-Krylov status output definitions
+
+  iter     - Number of iterates (steps taken) 
+  value    - Objective function value 
+  gnorm    - Norm of the gradient
+  snorm    - Norm of the step (update to optimization vector)
+  #fval    - Cumulative number of times the objective function was evaluated
+  #grad    - Number of times the gradient was computed
+  iterCG   - Number of Krylov iterations used to compute search direction
+  flagCG   - Krylov solver flag
+-------------------------------------------------------------------------------------------------------------
+  iter  value          gnorm          snorm          #fval     #grad     iterCG    flagCG    ls_#fval  ls_#grad  n_vmult   
+  0     1.458941e-03   6.825363e-03   
+  1     1.760514e-05   7.025451e-04   1.589961e+01   2         2         31        0         1         0         30278     
+  2     4.727225e-09   1.123886e-05   1.575409e+01   3         3         29        0         1         0         56181     
+  3     1.921450e-15   2.925740e-09   1.427388e-01   4         4         32        0         1         0         83650     
+  4     1.540989e-20   8.879121e-14   6.799959e-03   5         5         36        0         1         0         113510    
+Optimization Terminated with Status: Converged
+The process took 220.651 seconds to run.
+Total n_vmult for algorithm 113510

@@ -1,0 +1,15 @@
+run.
+********************************************************
+Biros and Ghattas Full-space method...with P2 preconditioner
+Using 16100 design variables: 16000 simulation variables and 100 control variables.
+Line Search: Backtracking satisfying Null Curvature Condition
+********************************************************
+Iteration         Func. val.        ||Lagr. grad.||   ||Constraint||    ||Search dir||    search_ctl_norm   search_sim_norm   search_adj_norm   n_kkt_iter        n_linesearches    n_grad            n_vmult           dRdW_form         dRdW_mult         dRdX_mult         d2R_mult          
+1                 6.61259e-06       0.0050069         0.0185352         8.90527           4.54196           4.67131           6.07069           60                1                 0                 57805             2                 53707             250               244               
+2                 8.02239e-07       0.00023911        0.000453085       2.3275            2.10708           0.388417          0.90918           46                1                 0                 99962             3                 92877             443               432               
+3                 7.17786e-10       4.78776e-05       6.68424e-05       2.49465           2.47714           0.136221          0.261773          55                1                 0                 150534            4                 139958            672               656               
+4                 1.4238e-12        5.12804e-08       2.25876e-08       0.139997          0.139015          0.00448206        0.0159366         57                1                 0                 202449            5                 188270            909               888               
+5                 9.48685e-13       2.44192e-11       1.65901e-10       0.0764288         0.0764285         0.000217392       2.27695e-05       64                1                 0                 260683            6                 242509            1174              1148              
+Optimization Terminated with Status: Converged
+The process took 1668.67 seconds to run.
+Total n_vmult for algorithm 260683

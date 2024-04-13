@@ -1,0 +1,19 @@
+********************************************************
+Biros and Ghattas Full-space method...with P2 preconditioner
+Using 16100 design variables: 16000 simulation variables and 100 control variables.
+Line Search: Backtracking satisfying Null Curvature Condition
+********************************************************
+Iteration         Func. val.        ||Lagr. grad.||   ||Constraint||    ||Search dir||    n_kkt_iter        n_linesearches    n_grad            
+1                 0.000287436       0.00338898        0.00660775        5.75812           63                2                 0                 
+2                 3.65882e-06       0.00121474        0.00576725        13.1185           60                1                 0                 
+3                 1.21338e-06       0.000475399       0.000132788       17.4488           63                1                 0                 
+4                 2.34592e-07       2.17204e-05       7.75378e-05       8.33337           60                1                 0                 
+5                 6.22942e-08       7.31326e-06       7.4006e-05        11.5249           60                1                 0                 
+6                 1.34609e-10       5.09295e-06       3.65864e-06       10.556            71                1                 0                 
+7                 4.18683e-11       4.48689e-09       9.43813e-09       0.660726          67                1                 0                 
+8                 2.32018e-11       3.36656e-10       1.3345e-09        0.246756          63                1                 0                 
+9                 1.53761e-11       1.92275e-10       9.02196e-10       0.144593          67                2                 0                 
+10                3.45947e-12       1.25514e-10       4.61376e-10       0.525181          67                1                 0                 
+11                1.87559e-12       3.94695e-11       5.46991e-11       0.107075          67                1                 0                 
+Optimization Terminated with Status: Converged
+The process took 4202.3 seconds to run.

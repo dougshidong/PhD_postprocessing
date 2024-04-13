@@ -1,0 +1,25 @@
+Starting optimization with 20...
+
+Newton-Krylov using GMRES with Limited-Memory BFGS preconditioning
+Line Search: Backtracking satisfying Null Curvature Condition
+-------------------------------------------------------------------------------------------------------------
+Newton-Krylov status output definitions
+
+  iter     - Number of iterates (steps taken) 
+  value    - Objective function value 
+  gnorm    - Norm of the gradient
+  snorm    - Norm of the step (update to optimization vector)
+  #fval    - Cumulative number of times the objective function was evaluated
+  #grad    - Number of times the gradient was computed
+  iterCG   - Number of Krylov iterations used to compute search direction
+  flagCG   - Krylov solver flag
+-------------------------------------------------------------------------------------------------------------
+  iter  value          gnorm          snorm          #fval     #grad     iterCG    flagCG    ls_#fval  ls_#grad  n_vmult           dRdW_form         dRdW_mult         dRdX_mult         d2R_mult          
+  0     3.242575e-03   1.010969e-01   
+  1     4.073901e-05   1.374345e-02   4.120858e-01   2         2         19        0         1         0         7220              6                 14574             42                80                
+  2     2.424904e-08   2.360069e-04   3.861428e-01   3         3         19        0         1         0         14156             10                28595             83                160               
+  3     9.273866e-14   2.929087e-07   2.151750e-02   4         4         19        0         1         0         20777             14                41881             124               240               
+  4     2.507832e-23   4.062897e-12   5.249846e-05   5         5         19        0         1         0         26550             17                53235             165               320               
+Optimization Terminated with Status: Converged
+The process took 46.0272 seconds to run.
+Total n_vmult for algorithm 26550

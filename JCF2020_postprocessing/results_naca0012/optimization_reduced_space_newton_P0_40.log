@@ -1,0 +1,49 @@
+Starting optimization with 80...
+
+Newton-Krylov using GMRES with Limited-Memory BFGS preconditioning
+Line Search: Backtracking satisfying Null Curvature Condition
+-------------------------------------------------------------------------------------------------------------
+Newton-Krylov status output definitions
+
+  iter     - Number of iterates (steps taken) 
+  value    - Objective function value 
+  gnorm    - Norm of the gradient
+  snorm    - Norm of the step (update to optimization vector)
+  #fval    - Cumulative number of times the objective function was evaluated
+  #grad    - Number of times the gradient was computed
+  iterCG   - Number of Krylov iterations used to compute search direction
+  flagCG   - Krylov solver flag
+-------------------------------------------------------------------------------------------------------------
+  iter  value          gnorm          snorm          #fval     #grad     iterCG    flagCG    ls_#fval  ls_#grad  
+  0     1.414709e-02   1.366958e-01   
+  1     1.689862e-03   8.252708e-02   4.997008e+03   2         2         60        0         1         0         
+  2     3.786163e-04   2.637668e-02   1.613585e+04   3         3         69        0         1         0         
+  3     3.767952e-05   4.313040e-03   9.132756e+03   4         4         61        0         1         0         
+  4     5.112042e-06   1.225748e-03   4.317360e+03   5         5         57        0         1         0         
+  5     5.406956e-07   7.003452e-04   5.125498e+03   6         6         57        0         1         0         
+  6     3.086356e-08   5.448457e-05   1.311673e+03   7         7         56        0         1         0         
+  7     1.691837e-08   1.672044e-04   3.196779e+02   8         8         64        0         1         0         
+  8     4.007984e-09   3.708204e-06   1.689032e+02   9         9         55        0         1         0         
+  9     3.286070e-09   3.457375e-05   1.122693e+02   12        10        82        0         3         0         
+  10    3.033589e-09   5.352740e-05   7.992301e+01   13        11        58        0         1         0         
+  11    1.035363e-09   1.300934e-05   9.396129e+01   14        12        56        0         1         0         
+  12    7.484552e-10   9.376273e-06   4.250598e+01   15        13        56        0         1         0         
+  13    5.208350e-10   1.524788e-05   7.135110e+01   16        14        62        0         1         0         
+  14    3.001225e-10   2.324004e-06   1.539535e+01   17        15        54        0         1         0         
+  15    2.040382e-10   1.325179e-05   5.165193e+01   19        16        69        0         2         0         
+  16    1.588238e-10   5.917766e-07   1.358961e+01   20        17        55        0         1         0         
+  17    9.305390e-11   1.012748e-05   4.054954e+01   22        18        75        0         2         0         
+  18    4.951460e-11   6.968677e-07   1.389757e+01   23        19        54        0         1         0         
+  19    3.344243e-11   2.893926e-06   2.368922e+01   25        20        66        0         2         0         
+  20    2.947895e-11   3.584424e-06   3.499463e+01   27        21        56        0         2         0         
+  21    2.092536e-11   8.510238e-07   1.720676e+01   28        22        54        0         1         0         
+  22    2.027763e-11   1.649225e-06   1.492315e+01   31        23        62        0         3         0         
+  23    1.991268e-11   2.661542e-06   1.649225e-06   32        24        58        0         1         0         
+  24    1.784957e-11   9.033416e-07   2.429024e+01   34        25        58        0         2         0         
+  25    1.653713e-11   2.658210e-06   2.976250e+01   37        26        58        0         3         0         
+  26    1.178643e-11   7.049843e-07   1.256453e+01   38        27        50        0         1         0         
+  27    1.114776e-11   1.979074e-06   2.155034e+01   41        28        60        0         3         0         
+  28    9.215074e-12   6.419544e-08   3.735533e+00   42        29        53        0         1         0         
+Optimization Terminated with Status: Converged
+The process took 818.955 seconds to run.
+Total n_vmult for algorithm 150081
